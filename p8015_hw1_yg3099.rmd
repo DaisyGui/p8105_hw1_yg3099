@@ -5,12 +5,13 @@ date: "2025-09-21"
 output: github_document
 ---
 
-## Problem 1
-
 ```{r setup}
 library("moderndive")
 library(ggplot2)
+library(tidyverse)
 ```
+
+## Problem 1
 
 ```{r load_data}
 data("early_january_weather") #load data
@@ -39,5 +40,29 @@ print(temp_time_plot)
 # save plot to directory
 ggsave(filename = "temp_time_scatterplot.png", plot = temp_time_plot)
 
+```
+
+## Problem 2
+
+```{r}
+# Create Variables
+rand_num = rnorm(10)
+
+logical = rand_num > 0
+
+rand_char = letters[1:10]
+
+factor_vec <- factor(rep(c("A", "B", "C"), length.out = 10),
+                   levels = c("A", "B", "C"))
+```
+
+```{r}
+# Combine into Data Frame
+p2_df = data.frame(
+  random_sample = rand_num, 
+  sample_gt_zero = logical, 
+  character_vector = rand_char, 
+  factor_vector_ABC = factor_vec
+)
 ```
 
