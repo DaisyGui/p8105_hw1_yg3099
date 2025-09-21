@@ -17,7 +17,11 @@ data("early_january_weather")
 
 This dataset include the following variables: `r colnames(early_january_weather)`. 
 
+One of the important variables is 'temp', which records the temperature at the time of record.
+
+Another important variable is 'time_hour', which records the time that the weather information are measured and recorded. 
+
 The dataset include `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns. 
 
-The mean tempereure according to the dataset is `r mean(early_january_weather$temp)`. 
+The mean temperature among the collected data is `r mean(early_january_weather$temp)`. 
 
