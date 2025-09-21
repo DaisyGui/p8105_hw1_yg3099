@@ -5,3 +5,19 @@ date: "2025-09-21"
 output: github_document
 ---
 
+## Problem 1
+
+```{r setup}
+library("moderndive")
+```
+
+```{r load_data}
+data("early_january_weather")
+```
+
+This dataset include the following variables: `r colnames(early_january_weather)`. 
+
+The dataset include `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns. 
+
+The mean tempereure according to the dataset is `r mean(early_january_weather$temp)`. 
+
