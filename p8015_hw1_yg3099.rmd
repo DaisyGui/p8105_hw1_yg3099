@@ -27,13 +27,20 @@ The dataset include `r nrow(early_january_weather)` rows and `r ncol(early_janua
 
 The mean temperature among the collected data is `r mean(early_january_weather$temp)`. 
 
+The code chunk below creates a scatterplot on temperature vs. time in hour. The humidity can be identified through the color of the points. The plot is saved to the project directory. 
+
 ```{r}
 # create and print scatterplot
 temp_time_plot = ggplot(
   early_january_weather, 
   aes(x = time_hour, y = temp, color = humid)
   ) + 
-  geom_point()
+  geom_point() +
+  labs(
+  title = "Early January Temperature vs. Time with Humidity", 
+  x = "Time (hour)", 
+  y = "Temperature"
+  )
 
 print(temp_time_plot)
 
@@ -115,4 +122,3 @@ as.numeric() tries to convert non-numeric variables into numeric. For logical va
 When trying to mean of logical variable, the mean of as.numeric result is taken. For the mean of factor variable, it is not automatically converted with as.numeric. Thus the mean cannot be calculated. 
 
 There is no way to convert character variable into numeric values. Thus, it's unable to take the mean. 
-
