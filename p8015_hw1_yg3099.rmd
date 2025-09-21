@@ -80,3 +80,33 @@ factor_mean = mean(pull(p2_df, var = factor_ABC))
 Mean of the random sample from standard normal distribution is `r rand_num_mean`. 
 
 Mean of the logical vector indicating whether elements of the sample are greater than zero is `r logical_mean`. 
+
+Mean of the character vector is `r char_mean`.
+
+Mean of the factor vector with 3 levels is `r factor_mean`.
+
+The means of random sample from standard normal distribution and the logical vector works. 
+
+The means of the character vectors and factor vectors do not work. 
+
+
+The code chunk below try converting logical, character, and factor variables with as.numeric. 
+
+```{r}
+# convert logical, character, and factor variables with as.numeric
+num_log = as.numeric(p2_df$sample_gt_zero)
+
+num_char = as.numeric(p2_df$character_vector)
+
+num_fac = as.numeric(p2_df$factor_ABC)
+```
+
+When the logical variable is converted, TRUE is convereted into 1 and FALSE is converted into 0. 
+
+There's a warning message when converting character variable:
+"Warning message:
+NAs introduced by coercion "
+All outcomes are "NA".
+
+When factor variable is converted, levels "A", "B", and "C" are converted into number 1, 2, and 3 respectively. 
+
