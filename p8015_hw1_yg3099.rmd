@@ -110,3 +110,9 @@ All outcomes are "NA".
 
 When factor variable is converted, levels "A", "B", and "C" are converted into number 1, 2, and 3 respectively. 
 
+as.numeric() tries to convert non-numeric variables into numeric. For logical variables, 0 and 1 con represent TRUE/FALSE. For factor variable, the order of levels are demonstrated. 
+
+When trying to mean of logical variable, the mean of as.numeric result is taken. For the mean of factor variable, it is not automatically converted with as.numeric. Thus the mean cannot be calculated. 
+
+There is no way to convert character variable into numeric values. Thus, it's unable to take the mean. 
+
