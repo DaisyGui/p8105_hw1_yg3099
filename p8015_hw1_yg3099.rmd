@@ -51,6 +51,16 @@ ggsave(filename = "temp_time_scatterplot.png", plot = temp_time_plot)
 
 ## Problem 2
 
+A data frame is created, which is comprised of:
+
+a random sample of size 10 from a standard Normal distribution,
+
+a logical vector indicating whether elements of the sample are greater than 0, 
+
+a character vector of length 10,
+
+a factor vector of length 10, with 3 different factor “levels”. 
+
 ```{r}
 # Create Variables
 rand_num = rnorm(10)
@@ -72,6 +82,8 @@ p2_df = data.frame(
   factor_ABC = factor_vec
 )
 ```
+
+Means of the 4 variables in the data frame are taken. 
 
 ```{r}
 # pull variables and calculate mean
