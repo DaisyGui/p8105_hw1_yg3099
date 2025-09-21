@@ -50,7 +50,7 @@ rand_num = rnorm(10)
 
 logical = rand_num > 0
 
-rand_char = letters[1:10]
+rand_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i","j")
 
 factor_vec <- factor(rep(c("A", "B", "C"), length.out = 10),
                    levels = c("A", "B", "C"))
@@ -62,7 +62,21 @@ p2_df = data.frame(
   random_sample = rand_num, 
   sample_gt_zero = logical, 
   character_vector = rand_char, 
-  factor_vector_ABC = factor_vec
+  factor_ABC = factor_vec
 )
 ```
 
+```{r}
+# pull variables and calculate mean
+rand_num_mean = mean(pull(p2_df, var = random_sample))
+
+logical_mean = mean(pull(p2_df, var = sample_gt_zero))
+
+char_mean = mean(pull(p2_df, var = character_vector))
+
+factor_mean = mean(pull(p2_df, var = factor_ABC))
+```
+
+Mean of the random sample from standard normal distribution is `r rand_num_mean`. 
+
+Mean of the logical vector indicating whether elements of the sample are greater than zero is `r logical_mean`. 
